@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вавилонская Башня</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .game-container {
+            position: relative;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .settings {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .settings label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border-radius: 8px;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .move-counter {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Вавилонская Башня</h1>
+    
+    <div class="instructions">
+        <h3>Правила игры:</h3>
+        <ol>
+            <li>Цель игры - переместить все диски с первого стержня на последний.</li>
+            <li>За один ход можно переместить только один диск.</li>
+            <li>Диск можно положить только на больший диск или на пустой стержень.</li>
+        </ol>
+        <p><strong>Инструкция:</strong> Кликните сначала на стержень, с которого хотите взять диск, а затем на стержень, куда хотите его переместить.</p>
+    </div>
+    
+    <div class="settings">
+        <label>
+            Количество дисков:
+            <select id="disks-count">
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </label>
+        
+        <label>
+            Количество стержней:
+            <select id="rods-count">
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+    </div>
+    
+    <div class="move-counter">Ходов: <span id="move-count">0</span></div>
+    
+    <div id="game-container" class="game-container"></div>
+    
+    <div class="controls">
+        <button id="reset-button">Начать заново</button>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="core.js"></script>
+    <script src="renderer.js"></script>
+    <script src="controls.js"></script>
+</body>
+</html>
